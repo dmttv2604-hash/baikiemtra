@@ -1,0 +1,134 @@
+/* ===== BANNER ===== */
+.banner {
+    background: url("khuonvien.png") center/cover no-repeat; /* Ảnh nền, căn giữa, cover toàn diện tích, không lặp */
+    height: 550px;                                       /* Chiều cao banner */
+    position: relative;                                  /* Để các phần tử con position: absolute bên trong */
+}
+.banner::before {
+    content: "";                                        /* Phần tử giả để tạo overlay */
+    position: absolute;                                 /* Đặt tuyệt đối so với .banner */
+    inset: 0;                                          /* Top, right, bottom, left = 0 → phủ toàn banner */
+    background: rgba(0,0,0,0.55);                     /* Lớp mờ đen che overlay */
+}
+.banner-content {
+    position: absolute;                                 /* Đặt chữ trên banner */
+    top: 28%;                                           /* Cách top banner 28% */
+    left: 50%;                                          /* Căn ngang giữa */
+    transform: translateX(-50%);                        /* Dịch về trái 50% để thực sự giữa */
+    text-align: center;                                 /* Chữ căn giữa */
+    color: #fff;                                        /* Chữ trắng */
+}
+.banner-content h1 { font-size: 42px; }                /* Tiêu đề lớn */
+.banner-content p  { margin-bottom: 20px; }           /* Khoảng cách dưới chữ */
+.btn-orange {
+    background: #002147;                                /* Nền xanh đậm */
+    padding: 10px 22px;                                 /* Padding chữ */
+    color: #fff;                                        /* Chữ trắng */
+    font-weight: bold;                                  /* Chữ đậm */
+    border-radius: 3px;                                 /* Bo góc nhẹ */
+    text-decoration: none;                               /* Bỏ gạch chân */
+}
+
+/* ===== 3 BOX INFO ===== */
+.banner-info {
+    position: absolute;                                 /* Nằm trên banner, dưới cùng */
+    bottom: 0;                                          /* Cách đáy banner 0 */
+    width: 100%;                                        /* Chiếm toàn chiều ngang */
+    display: flex;                                      /* Dùng Flexbox 3 box ngang nhau */
+    background: #002147;                                /* Nền xanh đậm */
+    color: #fff;                                        /* Chữ trắng */
+}
+.info-box {
+    flex: 1;                                            /* Mỗi box chiếm 1 phần bằng nhau */
+    padding: 25px 20px;                                 /* Khoảng cách trong box */
+    display: flex;                                      /* Flex để chữ + icon nằm ngang */
+    justify-content: space-between;                     /* Chia khoảng trống chữ và icon */
+    border-right: 1px solid rgba(255,255,255,0.15);    /* Viền phải mờ */
+}
+.info-box:last-child { border: none; }                 /* Box cuối không viền phải */
+.info-box h3 { margin: 0; font-size: 18px; }           /* Tiêu đề box */
+.info-box p  { margin: 5px 0 0; font-size: 14px; color: #ccc; } /* Mô tả box */
+.info-box i  { font-size: 40px; color: #ffcc00; }      /* Icon box màu vàng */
+
+/* ===== COURSES ===== */
+.course-section { padding: 60px; }                     /* Khoảng cách xung quanh section */
+.course-section h2 { font-size: 24px; font-weight: bold; } /* Tiêu đề section */
+.sub-title { margin-bottom: 30px; color: #999; }       /* Chú thích/ mô tả nhỏ */
+
+.course-grid {
+    display: grid;                                     /* Dùng Grid hiển thị nhiều khóa học */
+    grid-template-columns: repeat(3,1fr);             /* 3 cột bằng nhau */
+    gap: 25px;                                        /* Khoảng cách giữa các card */
+}
+.course-card {
+    border: 1px solid #ddd;                           /* Viền card */
+    background: #fff;                                 /* Nền trắng */
+    display: flex;                                    /* Flex cho nội dung bên trong */
+    flex-direction: column;                           /* Xếp từ trên xuống */
+}
+.course-card img {
+    width: 100%;                                      /* Ảnh chiếm toàn width card */
+    height: 200px;                                    /* Chiều cao cố định */
+    object-fit: cover;                                /* Cắt ảnh vừa khung, giữ tỉ lệ */
+}
+.course-card h3 { padding: 12px 12px 6px; font-size: 18px; } /* Tiêu đề card */
+.course-card p  { padding: 0 12px 12px; color: #666; flex: 1; } /* Nội dung mô tả */
+
+.btn-details {
+    margin: 15px 12px;                                /* Khoảng cách nút */
+    background: #e63900;                              /* Nền đỏ */
+    color: #fff;                                      /* Chữ trắng */
+    padding: 8px 14px;                                /* Padding chữ */
+    border-radius: 4px;                               /* Bo góc nút */
+    font-weight: bold;                                /* Chữ đậm */
+    text-decoration: none;                             /* Bỏ gạch chân */
+    width: 130px;                                     /* Chiều rộng cố định */
+}
+.btn-details:hover { background: #cc2f00; }           /* Hover nút đỏ đậm hơn */
+
+/* ===== LECTURERS ===== */
+.lecturers { padding: 60px; }                         /* Khoảng cách section */
+.lecturers h2 { font-size: 24px; }                    /* Tiêu đề section */
+
+.lecturer-grid {
+    display: grid;                                     /* Grid giảng viên */
+    grid-template-columns: repeat(4,1fr);             /* 4 cột */
+    gap: 25px;                                        /* Khoảng cách giữa giảng viên */
+    text-align: center;                               /* Căn giữa chữ */
+}
+.lecturer-card {
+    border: 1px solid #ddd;                           /* Viền card */
+    background: #fff;                                 /* Nền trắng */
+    padding: 20px 15px;                               /* Padding bên trong */
+}
+.avatar-wrap {
+    width: 140px;                                     /* Chiều rộng avatar */
+    height: 140px;                                    /* Chiều cao avatar */
+    border-radius: 0%;                               /* Hình vuông avatar */
+    overflow: hidden;                                 /* Ẩn phần ảnh vượt khung */
+    margin: auto;                                     /* Căn giữa */
+}
+.avatar-wrap img {
+    width: 100%;                                      /* Chiều rộng full khung */
+    height: 100%;                                     /* Chiều cao full khung */
+    object-fit: cover;                                /* Giữ tỉ lệ ảnh */
+}
+.lecturer-card h3 { margin: 14px 0 6px; font-size: 16px; } /* Tên giảng viên */
+.lecturer-card p  { font-size: 13px; color: #777; }        /* Chức danh */
+
+.icon-bar {
+    margin-top: 14px;                                 /* Khoảng cách trên icon bar */
+    display: flex;                                    /* Icon nằm ngang */
+    justify-content: center;                           /* Căn giữa icon */
+    gap: 6px;                                         /* Khoảng cách giữa các icon */
+}
+.icon-bar i {
+    background: #ffcc00;      /* Nền vàng */
+    color: #ffffff;            /* Chữ trắng */
+    padding: 6px 7px;          /* Khoảng cách xung quanh chữ */
+    border-radius: 3px;        /* Bo góc */
+    font-size: 14px;           /* Kích thước chữ */
+    font-style: normal;        /* Không in nghiêng */
+    font-weight: bold;         /* Nếu muốn chữ đậm */
+    display: inline-block;     /* Đảm bảo padding và kích thước áp dụng chính xác */
+}

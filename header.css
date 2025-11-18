@@ -1,0 +1,73 @@
+/* ===== RESET TẤT CẢ ELEMENT ===== */
+* {
+    margin: 0;                 /* Xoá margin mặc định */
+    padding: 0;                /* Xoá padding mặc định */
+    box-sizing: border-box;    /* Tính width + padding + border trong cùng 1 giá trị */
+    font-family: Arial, sans-serif; /* Đặt font chữ mặc định toàn trang */
+}
+
+/* ===== HEADER ===== */
+.header {
+    width: 100%;                       /* Chiếm toàn bộ chiều ngang màn hình */
+    padding: 18px 60px;                /* Khoảng cách trên/dưới 18px, trái/phải 60px */
+    background: #002147;               /* Màu nền xanh đậm */
+    display: flex;                     /* Sử dụng Flexbox để căn hàng ngang */
+    justify-content: space-between;     /* Logo trái, menu/phần còn lại sang phải */
+    align-items: center;               /* Căn giữa theo chiều dọc */
+}
+
+/* ===== LOGO + ICON TRÒN ===== */
+.logo {
+    color: #fff;                       /* Chữ trắng */
+    font-size: 20px;                    /* Kích thước chữ logo */
+    font-weight: bold;                  /* Chữ đậm */
+    display: flex;                      /* Icon + chữ nằm cùng hàng */
+    align-items: center;                /* Căn giữa theo chiều dọc */
+    gap: 10px;                          /* Khoảng cách giữa icon và chữ */
+}
+
+/* Icon tròn trước logo */
+.logo::before {
+    content: "";                        /* Bắt buộc để hiển thị */
+    width: 28px;                        /* Chiều rộng icon */
+    height: 28px;                       /* Chiều cao icon */
+    background: #ffcc00;                /* Màu vàng */
+    border-radius: 50%;                 /* Bo tròn 100% → hình tròn */
+    display: inline-block;              /* Cho phép chỉnh size */
+}
+
+/* ===== MENU ===== */
+.menu {
+    list-style: none;                   /* Xoá dấu chấm trước <li> */
+    display: flex;                      /* Nằm ngang */
+    gap: 25px;                          /* Khoảng cách giữa các mục menu */
+}
+
+/* Link menu */
+.menu a {
+    text-decoration: none;              /* Bỏ gạch chân */
+    color: #fff;                        /* Chữ trắng */
+    padding-bottom: 6px;                /* Khoảng cách để gạch chân hover đẹp */
+    font-weight: 500;                   /* Chữ hơi đậm */
+    transition: 0.3s;                   /* Hiệu ứng mượt khi hover */
+    border-bottom: 3px solid transparent; /* Tạo gạch chân nhưng trong suốt ban đầu */
+}
+
+/* Hover hoặc link đang active */
+.menu a:hover,
+.menu .active {
+    color: #ffcc00;                     /* Chữ vàng khi hover hoặc active */
+    border-bottom: 3px solid #ffcc00;  /* Gạch chân vàng xuất hiện */
+}
+
+/* ===== NÚT APPLY ===== */
+.apply-btn {
+    background: #ffcc00;               /* Nền vàng */
+    color: #002147;                     /* Chữ xanh đậm */
+    padding: 10px 20px;                 /* Kích thước nút */
+    border: none;                       /* Bỏ viền mặc định */
+    font-weight: bold;                   /* Chữ đậm */
+    border-radius: 4px;                 /* Bo nhẹ */
+    cursor: pointer;                     /* Chuột biến thành tay khi hover */
+    transition: 0.3s;                   /* Hover mượt */
+}
